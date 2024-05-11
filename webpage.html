@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jashan Bal</title>
+    <style>
+        body {
+            background-color: #cddfe6; /* This is a light blue color */
+        }
+    
+        #profile-picture {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 350px; /* adjust as needed */
+            height: 350px; /* adjust as needed */
+        }
+        h1 {
+        font-size: 2em; /* This is 2 times the base font size */
+     }
+        p {
+        max-width: 800px; /* adjust as needed */
+        margin-left: 0 auto; /* centers the paragraph if the parent is a block and has a width */
+        font-size: 1.2em; /* adjust as needed */
+    }
+    details {
+        padding: 10px; /* Adds some padding */
+        width: 600px; /* Sets a width */
+        margin: 20px 0; /* Adds some margin on the top and bottom */
+    }
+    summary:hover {
+        background-color: #b3c2c9; /* Changes the background color when hovered */
+    }
+    summary {
+        border: 1px solid #000; /* Adds a border to the summary */
+        padding: 10px; /* Adds some padding to the summary */
+        font-size: 1.5em; /* Increases the font size */
+        display: flex; /* Makes the summary a flex container */
+    justify-content: space-between; /* Places the children at the ends of the line */
+    }
+    details ol li {
+        font-size: 1.2em; /* This is 1.5 times the base font size */
+        margin-bottom: 20px; /* Adds space below each list item */
+    }
+    details p {
+        font-size: 1.2em; /* This is 1.5 times the base font size */
+    }
+    summary::-webkit-details-marker {
+    display: none;
+    }
+    summary::before {
+    content: "+ ";
+}
+details.open summary::before {
+    content: "- ";
+}
+    </style>
+</head>
+<body>
+    <img id="profile-picture" src="IMG_0429.jpeg" alt="Profile Picture">
+    <h1>Jashan Bal</h1>
+    <p>I am currently a masters student in Pure Mathematics at University of Waterloo under 
+        the supervision of Laurent Marcoux. My research interests include operator algebras and
+        topological dynamics. You can contact me at "j2bal@uwaterloo.ca". 
+    </p>
+    <details>
+        <summary>Publications</summary>
+        <ol>
+        <li>"A reproducing kernel approach to Lebesgue decomposition" with  Robert T.W. Martin and Fouad Naderi, <em>Canadian Journal of Mathematics</em>, 2024 <strong>(to appear)</strong>.</li>
+        <li>"Jensen polynomials associated with Wright's circle method: Hyperbolicity and Tur&aacute;n inequalities"
+            with Fern Haraldson, Joshua Males, and Ian Thompson, 2023 <strong>(preprint)</strong>. 
+        </li>
+        <!-- Add more publications as needed -->
+        </ol>
+    </details>
+    <details>
+        <summary>Education</summary>
+        <p>Masters in Pure Mathematics at University of Waterloo, 2023-2024 (expected)</p>
+        <p>B.Sc Honours in Mathematics at University of Manitoba, 2019-2023</p>
+        <!-- Add more publications as needed -->
+    </details>
+    <details>
+        <summary>Research</summary>
+        <p>My current masters reserach project is looking at the injective envelope of operator spaces 
+            and C*-envelopes of operator algebras using boundary representations. I am interested in
+             injectivity for commutative C*-algebras. Equivalently using Gelfand duality 
+             projectivity for compact Hausdorff spaces. </p>
+             
+             <p>
+            We can consider a topological 
+             group acting continuously on these compact Hausdorff spaces, the so called G-flows. I am also interested in studying projectivity
+             in the category of these G-flows with morphisms given as G-equivariant continuous maps.  </p>
+    </details>
+    <script>
+        document.querySelectorAll('details').forEach((details) => {
+            details.addEventListener('toggle', function() {
+                if (details.open) {
+                    details.classList.add('open');
+                } else {
+                    details.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
