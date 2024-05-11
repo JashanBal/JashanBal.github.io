@@ -18,7 +18,7 @@
         font-size: 2em; /* This is 2 times the base font size */
      }
         p {
-        max-width: 600px; /* adjust as needed */
+        max-width: 800px; /* adjust as needed */
         margin-left: 0 auto; /* centers the paragraph if the parent is a block and has a width */
         font-size: 1.2em; /* adjust as needed */
     }
@@ -52,6 +52,28 @@
 }
 details.open summary::before {
     content: "- ";
+}
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 0.8em; /* Adjust the base font size */
+    }
+
+    #profile-picture {
+        width: 200px; /* Adjust the width */
+        height: 200px; /* Adjust the height */
+    }
+
+    h1 {
+        font-size: 1.6em; /* Adjust the font size */
+    }
+
+    p, details, summary {
+        max-width: 90%; /* Adjust the width */
+    }
+
+    details ol li {
+        font-size: 1em; /* Adjust the font size */
+    }
 }
     </style>
 </head>
