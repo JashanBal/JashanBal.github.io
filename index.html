@@ -1,130 +1,171 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jashan Bal</title>
     <style>
         body {
-            background-color: #cddfe6; /* This is a light blue color */
+            background-color: #cddfe6;
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
         }
-    
+
+        /* Profile Picture */
         #profile-picture {
-            position: absolute;
-            display: flex;
-            top: 0;
-            right: 0;
-            width: 350px; /* adjust as needed */
-            height: 350px; /* adjust as needed */
+            float: right;
+            width: 300px;
+            height: auto;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
         }
+
         h1 {
-        font-size: 2em; /* This is 2 times the base font size */
-     }
+            font-size: 2em;
+            margin-top: 0;
+        }
+
         p {
-        max-width: 800px; /* adjust as needed */
-        margin-left: 0 auto; /* centers the paragraph if the parent is a block and has a width */
-        font-size: 1.2em; /* adjust as needed */
-    }
-    details {
-        padding: 10px; /* Adds some padding */
-        width: 600px; /* Sets a width */
-        margin: 20px 0; /* Adds some margin on the top and bottom */
-    }
-    summary:hover {
-        background-color: #b3c2c9; /* Changes the background color when hovered */
-    }
-    summary {
-        border: 1px solid #000; /* Adds a border to the summary */
-        padding: 10px; /* Adds some padding to the summary */
-        font-size: 1.5em; /* Increases the font size */
-        display: flex; /* Makes the summary a flex container */
-    justify-content: space-between; /* Places the children at the ends of the line */
-    }
-    details ol li {
-        font-size: 1.2em; /* This is 1.5 times the base font size */
-        margin-bottom: 20px; /* Adds space below each list item */
-    }
-    details p {
-        font-size: 1.2em; /* This is 1.5 times the base font size */
-    }
-    summary::-webkit-details-marker {
-    display: none;
-    }
-    summary::before {
-    content: "+ ";
-}
-details.open summary::before {
-    content: "- ";
-}
-@media screen and (max-width: 600px) {
-    body {
-        font-size: 0.8em; /* Adjust the base font size */
-    }
+            font-size: 1.2em;
+        }
 
-    #profile-picture {
-        width: 200px; /* Adjust the width */
-        height: 200px; /* Adjust the height */
-    }
+        /* Details Sections */
+        details {
+            padding: 10px;
+            width: 100%;
+            margin: 20px 0;
+            background-color: #e4edf1;
+            border-radius: 5px;
+        }
 
-    h1 {
-        font-size: 1.6em; /* Adjust the font size */
-    }
+        summary {
+            border: 1px solid #000;
+            padding: 10px;
+            font-size: 1.4em;
+            background-color: #f4f7f8;
+            border-radius: 4px;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    p, details, summary {
-        max-width: 90%; /* Adjust the width */
-    }
+        summary:hover {
+            background-color: #d3dde2;
+        }
 
-    details ol li {
-        font-size: 1em; /* Adjust the font size */
-    }
-}
+        /* Hide default markers (cross-browser) */
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "+ ";
+            font-weight: bold;
+        }
+
+        details.open summary::before {
+            content: "- ";
+        }
+
+        details ol li {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 0.9em;
+            }
+
+            #profile-picture {
+                float: none;
+                display: block;
+                width: 70%;
+                margin: 0 auto 20px auto;
+            }
+
+            summary {
+                font-size: 1.2em;
+            }
+
+            details ol li {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
-    <img id="profile-picture" src="IMG_0429.jpeg" alt="Profile Picture">
+
+    <img id="profile-picture" src="IMG_0429.jpeg" alt="Photo of Jashan Bal">
+
     <h1>Jashan Bal</h1>
-    <p>I am currently a PhD student in Pure Mathematics at the University of Waterloo under 
+
+    <p>
+        I am currently a PhD student in Pure Mathematics at the University of Waterloo under 
         the supervision of Matthew Kennedy and Andy Zucker. My research interests include dynamics and operator algebras.
-    </p> 
-    <p>   
-        I completely my masters at the University of Waterloo under the supervision of Laurent Marcoux. My masters research project was a survey on the C*-envelope using the techniques of injectivity and boundary representations. 
-        You can obtain a copy of the paper <a href ="The C*-envelope.pdf">here</a>. You can contact me at "j2bal (at) uwaterloo (dot) ca". 
     </p>
+
+    <p>
+        I completed my masters at the University of Waterloo under the supervision of Laurent Marcoux. My masters research project was a survey on the C*-envelope using the techniques of injectivity and boundary representations. 
+        You can obtain a copy of the paper <a href="The C*-envelope.pdf">here</a>.  
+        You can contact me at "j2bal (at) uwaterloo (dot) ca".
+    </p>
+
     <details>
         <summary>Publications</summary>
         <ol>
-        <li>"A reproducing kernel approach to Lebesgue decomposition" with  Robert T.W. Martin and Fouad Naderi, <em>Canadian Journal of Mathematics</em>, 2024 <strong></strong>.</li>
-        <!-- Add more publications as needed -->
+            <li>
+                "A reproducing kernel approach to Lebesgue decomposition" with Robert T.W. Martin and Fouad Naderi, 
+                <em>Canadian Journal of Mathematics</em>, 2024.
+            </li>
         </ol>
     </details>
+
     <details>
         <summary>Education</summary>
-        <p>PhD in Pure Mathematics at the University of Waterloo, 2024-2028 (expected)</p>
-        <p>Masters in Pure Mathematics at the University of Waterloo, 2023-2024 </p>
-        <p>B.Sc Honours in Mathematics at the University of Manitoba, 2019-2023</p>
-        <!-- Add more publications as needed -->
+        <p>PhD in Pure Mathematics, University of Waterloo, 2024–2028 (expected)</p>
+        <p>Masters in Pure Mathematics, University of Waterloo, 2023–2024</p>
+        <p>B.Sc. Honours in Mathematics, University of Manitoba, 2019–2023</p>
     </details>
+
     <details>
         <summary>Research</summary>
-        <p> My current interests lie in studying the interplay between topological dynamics and operator algebras. For example, analyzing injectivity for untial commutative G-C*-algebras
-        is dual to looking at projectivity for compact Hausdoff spaces with continuous G-actions. 
+        <p>
+            My current interests lie in studying the interplay between topological dynamics and operator algebras. 
+            For example, analyzing injectivity for unital commutative G-C*-algebras
+            is dual to studying projectivity for compact Hausdorff spaces with continuous G-actions.
         </p>
     </details>
-    <script>
-        document.querySelectorAll('details').forEach((details) => {
-            details.addEventListener('toggle', function() {
-                if (details.open) {
-                    details.classList.add('open');
-                } else {
-                    details.classList.remove('open');
-                }
-            });
-        });
-    </script>
-        <footer>
+
+    <footer>
         <p id="last-updated"></p>
     </footer>
-   <script>
-    document.getElementById('last-updated').textContent = 'Last Updated: Oct 17, 2024';
-   </script>
+
+    <script>
+        // Add/remove "open" class for + / - symbol
+        document.querySelectorAll('details').forEach((details) => {
+            details.addEventListener('toggle', () => {
+                details.classList.toggle('open', details.open);
+            });
+        });
+
+        // Last updated date
+        document.getElementById('last-updated').textContent = 
+            'Last Updated: Oct 17, 2024';
+    </script>
+
 </body>
 </html>
