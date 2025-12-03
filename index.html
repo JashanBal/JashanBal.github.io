@@ -64,14 +64,23 @@
             display: none;
         }
 
-        summary::before {
-            content: "+ ";
-            font-weight: bold;
+       summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
         }
 
-        details.open summary::before {
-            content: "- ";
+        summary::after {
+            content: "+";
+            font-weight: bold;
+            margin-left: 10px;
         }
+
+        details[open] summary::after {
+            content: "−"; /* en dash, looks nicer */
+        }
+
 
         details ol li {
             font-size: 1.2em;
