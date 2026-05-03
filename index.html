@@ -1,178 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jashan Bal</title>
+    <title>Jashan Bal | University of Waterloo</title>
     <style>
-        body {
-            background-color: #cddfe6;
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
+        :root {
+            --bg-color: #cddfe6;
+            --text-color: #2d3748;
+            --link-color: #2b6cb0;
+            --link-hover: #1a365d;
+            --heading-color: #1a202c;
+            --card-bg: #ffffff;
         }
 
-        /* Profile Picture */
-        #profile-picture {
-            float: right;
-            width: 300px;
-            height: auto;
-            margin-left: 20px;
-            margin-bottom: 20px;
-            border-radius: 4px;
+        body {
+            background-color: var(--bg-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 30px;
+        }
+
+        .header-text {
+            flex: 1;
         }
 
         h1 {
-            font-size: 2em;
-            margin-top: 0;
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            color: var(--heading-color);
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #4a5568;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        #profile-picture {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-left: 40px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: var(--heading-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 8px;
         }
 
         p {
-            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-size: 1.1em;
         }
 
-        /* Details Sections */
-        details {
-            padding: 10px;
-            width: 100%;
-            margin: 20px 0;
-            background-color: #e4edf1;
-            border-radius: 5px;
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
-        summary {
-            border: 1px solid #000;
-            padding: 10px;
-            font-size: 1.4em;
-            background-color: #f4f7f8;
-            border-radius: 4px;
-            cursor: pointer;
-            list-style: none;
-            user-select: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
         }
 
-        summary:hover {
-            background-color: #d3dde2;
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
         }
 
-        /* Hide default markers (cross-browser) */
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-       summary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-
-        summary::after {
-            content: "+";
-            font-weight: bold;
-            margin-left: 10px;
-        }
-
-        details[open] summary::after {
-            content: "−"; /* en dash, looks nicer */
-        }
-
-
-        details ol li {
-            font-size: 1.2em;
+        li {
             margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+
+        .journal {
+            font-style: italic;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .education-degree {
+            font-weight: 500;
+        }
+
+        .education-year {
+            color: #718096;
         }
 
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
+            text-align: center;
             font-size: 0.9em;
-            color: #333;
+            color: #718096;
+            border-top: 1px solid #edf2f7;
+            padding-top: 20px;
         }
 
-        /* Responsive Styles */
-        @media screen and (max-width: 600px) {
-            body {
-                font-size: 0.9em;
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            header {
+                flex-direction: column-reverse;
+                text-align: center;
             }
 
             #profile-picture {
-                float: none;
-                display: block;
-                width: 70%;
-                margin: 0 auto 20px auto;
+                margin: 0 0 25px 0;
+                width: 180px;
+                height: 180px;
             }
 
-            summary {
-                font-size: 1.2em;
+            .education-item {
+                flex-direction: column;
             }
 
-            details ol li {
-                font-size: 1em;
+            .education-year {
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
 
-    <img id="profile-picture" src="IMG_0429.jpeg" alt="Photo of Jashan Bal">
+    <div class="container">
+        <header>
+            <div class="header-text">
+                <h1>Jashan Bal</h1>
+                <p class="subtitle">PhD Student in Pure Mathematics<br>University of Waterloo</p>
+            </div>
+            <img id="profile-picture" src="IMG_0429.jpeg" alt="Photo of Jashan Bal">
+        </header>
 
-    <h1>Jashan Bal</h1>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am currently a PhD student in Pure Mathematics at the University of Waterloo under 
+                the supervision of <a href="https://www.math.uwaterloo.ca/~m3kenned/" target="_blank">Matthew Kennedy</a> and <a href="https://ajzucker.wordpress.com" target="_blank">Andy Zucker</a>. My main research interests are dynamics and operator algebras.
+            </p>
+            <p>
+                I completed my masters at the University of Waterloo under the supervision of <a href="https://math.uwaterloo.ca/~lwmarcou/" target="_blank">Laurent Marcoux</a>. My masters research project was a survey on the C*-envelope using the techniques of injectivity and boundary representations.  
+            </p>
+            <p>
+                You can contact me at <strong>j2bal (at) uwaterloo (dot) ca</strong>.
+            </p>
+        </section>
 
-    <p>
-        I am currently a PhD student in Pure Mathematics at the University of Waterloo under 
-        the supervision of <a href="https://www.math.uwaterloo.ca/~m3kenned/">Matthew Kennedy</a> and <a href="https://ajzucker.wordpress.com">Andy Zucker</a>. My main research interests are to do with dynamics and its various interactions with different areas of math.
-    </p>
+        <section id="publications">
+            <h2>Publications & Preprints</h2>
+            <ol>
+                <li>
+                    <span class="publication-title">"Projectivity in topological dynamics"</span>, <em>preprint</em>, 2025. (<a href="https://arxiv.org/abs/2511.14944" target="_blank">arXiv</a>) (submitted)
+                </li>
+                <li>
+                    <span class="publication-title">"A reproducing kernel approach to Lebesgue decomposition"</span> with Robert T.W. Martin and Fouad Naderi, 
+                    <span class="journal">Canadian Journal of Mathematics</span>, 2025. (<a href="https://arxiv.org/abs/2312.01961" target="_blank">arXiv</a>)
+                </li>
+                <li>
+                    <span class="publication-title">"Jensen polynomials associated with Wright's circle method: Hyperbolicity and Turán inequalities"</span> with Fern Haraldson, Joshua Males, and Ian Thompson, 
+                    <span class="journal">Integers</span>, 2025. (<a href="https://arxiv.org/abs/2301.02492" target="_blank">arXiv</a>)
+                </li>
+            </ol>
+        </section>
 
-    <p>
-        I completed my masters at the University of Waterloo under the supervision of <a href="https://math.uwaterloo.ca/~lwmarcou/">Laurent Marcoux</a>. My masters research project was a survey on the C*-envelope using the techniques of injectivity and boundary representations.  
-    </p>
-    <p>
-        You can contact me at "j2bal (at) uwaterloo (dot) ca".
-    </p>
+        <section id="education">
+            <h2>Education</h2>
+            <div>
+                <div class="education-item">
+                    <span class="education-degree">PhD in Pure Mathematics, University of Waterloo</span>
+                    <span class="education-year">2024–Present</span>
+                </div>
+                <div class="education-item">
+                    <span class="education-degree">Masters in Pure Mathematics, University of Waterloo</span>
+                    <span class="education-year">2023–2024</span>
+                </div>
+                <div class="education-item">
+                    <span class="education-degree">B.Sc. Honours in Mathematics, University of Manitoba</span>
+                    <span class="education-year">2019–2023</span>
+                </div>
+            </div>
+        </section>
 
-    <details>
-        <summary>Publications</summary>
-        <ol>
-            <li>
-                "Projectivity in topological dynamics", <em>preprint</em>, 2025. (<a href="https://arxiv.org/abs/2511.14944">arXiv</a>) (submitted)
-            </li>
-            <li>
-                "A reproducing kernel approach to Lebesgue decomposition" with Robert T.W. Martin and Fouad Naderi, 
-                <em>Canadian Journal of Mathematics</em>, 2025. (<a href="https://arxiv.org/abs/2312.01961">arXiv</a>)
-            </li>
-            <li>
-                "Jensen polynomials associated with Wright's circle method: Hyperbolicity and Turán inequalities" with Fern Haraldson, Joshua Males, and Ian Thompson, 
-                <em>Integers</em>, 2025. (<a href="https://arxiv.org/abs/2301.02492">arXiv</a>)
-            </li>
-        </ol>
-    </details>
-
-    <details>
-        <summary>Education</summary>
-        <p>PhD in Pure Mathematics, University of Waterloo, 2024– </p>
-        <p>Masters in Pure Mathematics, University of Waterloo, 2023–2024</p>
-        <p>B.Sc. Honours in Mathematics, University of Manitoba, 2019–2023</p>
-    </details>
-
-    <footer>
-        <p id="last-updated"></p>
-    </footer>
+        <footer>
+            <p id="last-updated"></p>
+        </footer>
+    </div>
 
     <script>
-        // Add/remove "open" class for + / - symbol
-        document.querySelectorAll('details').forEach((details) => {
-            details.addEventListener('toggle', () => {
-                details.classList.toggle('open', details.open);
-            });
-        });
-
-        // Last updated date
+        // Automatically set to the current month and year
+        const dateOptions = { month: 'long', year: 'numeric' };
         document.getElementById('last-updated').textContent = 
-            'Last Updated: February, 2026';
+            'Last Updated: ' + new Date().toLocaleDateString('en-US', dateOptions);
     </script>
 
 </body>
